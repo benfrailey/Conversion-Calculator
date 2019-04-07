@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7B96E4CB225A7C94003E5361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E4CA225A7C94003E5361 /* AppDelegate.swift */; };
-		7B96E4CD225A7C94003E5361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E4CC225A7C94003E5361 /* ViewController.swift */; };
 		7B96E4D0225A7C94003E5361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B96E4CE225A7C94003E5361 /* Main.storyboard */; };
 		7B96E4D2225A7C97003E5361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B96E4D1225A7C97003E5361 /* Assets.xcassets */; };
 		7B96E4D5225A7C97003E5361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B96E4D3225A7C97003E5361 /* LaunchScreen.storyboard */; };
 		7B96E4E0225A7C97003E5361 /* Conversion_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E4DF225A7C97003E5361 /* Conversion_CalculatorTests.swift */; };
+		7B96E4EB225A92E4003E5361 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B96E4EA225A92E4003E5361 /* ConverterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* Begin PBXFileReference section */
 		7B96E4C7225A7C94003E5361 /* Conversion Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conversion Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E4CA225A7C94003E5361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B96E4CC225A7C94003E5361 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B96E4CF225A7C94003E5361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B96E4D1225A7C97003E5361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B96E4D4225A7C97003E5361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		7B96E4DB225A7C97003E5361 /* Conversion CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Conversion CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96E4DF225A7C97003E5361 /* Conversion_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion_CalculatorTests.swift; sourceTree = "<group>"; };
 		7B96E4E1225A7C97003E5361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B96E4EA225A92E4003E5361 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				7B96E4CA225A7C94003E5361 /* AppDelegate.swift */,
-				7B96E4CC225A7C94003E5361 /* ViewController.swift */,
 				7B96E4CE225A7C94003E5361 /* Main.storyboard */,
 				7B96E4D1225A7C97003E5361 /* Assets.xcassets */,
 				7B96E4D3225A7C97003E5361 /* LaunchScreen.storyboard */,
 				7B96E4D6225A7C97003E5361 /* Info.plist */,
+				7B96E4EA225A92E4003E5361 /* ConverterViewController.swift */,
 			);
 			path = "Conversion Calculator";
 			sourceTree = "<group>";
@@ -197,8 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B96E4CD225A7C94003E5361 /* ViewController.swift in Sources */,
 				7B96E4CB225A7C94003E5361 /* AppDelegate.swift in Sources */,
+				7B96E4EB225A92E4003E5361 /* ConverterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
