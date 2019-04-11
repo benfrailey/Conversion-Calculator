@@ -19,10 +19,14 @@ class ConverterViewController: UIViewController {
     }
     
     var currentConverter = 0
-    let converters = [Converter(label: "fahrenheit to celcius", inputUnit: "°F", outputUnit: "°C"), Converter(label: "celcius to fahrenheit", inputUnit: "°C", outputUnit: "°F"), Converter(label: "miles to kilometers", inputUnit: "mi", outputUnit: "km"), Converter(label: "kilometers to miles", inputUnit: "km", outputUnit: "mi")]
+    var converters: [Converter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let converterArray = [Converter(label: "fahrenheit to celcius", inputUnit: "°F", outputUnit: "°C"), Converter(label: "celcius to fahrenheit", inputUnit: "°C", outputUnit: "°F"), Converter(label: "miles to kilometers", inputUnit: "mi", outputUnit: "km"), Converter(label: "kilometers to miles", inputUnit: "km", outputUnit: "mi")]
+        initializeConverters(converterArray: converterArray, current: 0)
+        
         
         OutputDisplay.text = converters[currentConverter].outputUnit
         InputDisplay.text = converters[currentConverter].inputUnit
@@ -31,39 +35,37 @@ class ConverterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func initializeConverters(converterArray: [Converter], current: Int){
+        currentConverter = current
+        converters = converterArray
+    }
+    
     @IBAction func converterPressed(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Converters", message: "Select a converter", preferredStyle: UIAlertController.Style.actionSheet)
         alert.addAction(UIAlertAction(title: converters[0].label, style: UIAlertAction.Style.default, handler: {
             (alertAction) -> Void in
             self.currentConverter = 0
-            
-            self.OutputDisplay.text = self.converters[self.currentConverter].outputUnit
-            self.InputDisplay.text = self.converters[self.currentConverter].inputUnit
+            self.respondToActionSheet()
         }))
         
         alert.addAction(UIAlertAction(title: converters[1].label, style: UIAlertAction.Style.default, handler: {
             (alertAction) -> Void in
             self.currentConverter = 1
-            
-            self.OutputDisplay.text = self.converters[self.currentConverter].outputUnit
-            self.InputDisplay.text = self.converters[self.currentConverter].inputUnit
+            self.respondToActionSheet()
         }))
         
         alert.addAction(UIAlertAction(title: converters[2].label, style: UIAlertAction.Style.default, handler: {
             (alertAction) -> Void in
             self.currentConverter = 2
-            
-            self.OutputDisplay.text = self.converters[self.currentConverter].outputUnit
-            self.InputDisplay.text = self.converters[self.currentConverter].inputUnit
+            self.respondToActionSheet()
         }))
         
         alert.addAction(UIAlertAction(title: converters[3].label, style: UIAlertAction.Style.default, handler: {
             (alertAction) -> Void in
             self.currentConverter = 3
             
-            self.OutputDisplay.text = self.converters[self.currentConverter].outputUnit
-            self.InputDisplay.text = self.converters[self.currentConverter].inputUnit
+            self.respondToActionSheet()
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -72,6 +74,10 @@ class ConverterViewController: UIViewController {
 
     }
     
+    func respondToActionSheet(){
+        OutputDisplay.text = converters[currentConverter].outputUnit
+        InputDisplay.text = converters[currentConverter].inputUnit
+    }
     /*
     // MARK: - Navigation
 
