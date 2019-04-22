@@ -12,6 +12,8 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var OutputDisplay: UITextField!
     @IBOutlet weak var InputDisplay: UITextField!
     
+    var converter = ConversionModel()
+    
     struct Converter {
         let label: String
         let inputUnit: String
@@ -70,8 +72,76 @@ class ConverterViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
         
-        
+        converter.resetNum()
+        OutputDisplay.text = ""
+        InputDisplay.text = ""
 
+    }
+    @IBAction func dotButton(_ sender: Any) {
+        converter(".")
+    }
+    
+    @IBAction func zeroButton(_ sender: Any) {
+        converter("0")
+    }
+    
+    @IBAction func oneButton(_ sender: Any) {
+        converter("1")
+    }
+    
+    @IBAction func twoButton(_ sender: Any) {
+        converter("2")
+    }
+    
+    @IBAction func threeButton(_ sender: Any) {
+        converter("3")
+    }
+    
+    @IBAction func fourButton(_ sender: Any) {
+        converter("4")
+    }
+    
+    @IBAction func fiveButton(_ sender: Any) {
+        converter("5")
+    }
+    
+    @IBAction func sixButton(_ sender: Any) {
+        converter("6")
+    }
+    
+    @IBAction func sevenButton(_ sender: Any) {
+        converter("7")
+    }
+    
+    @IBAction func eightButton(_ sender: Any) {
+        converter("8")
+    }
+    
+    @IBAction func nineButton(_ sender: Any) {
+        converter("9")
+    }
+    
+    @IBAction func cButton(_ sender: Any) {
+        converter("C")
+    }
+    
+    @IBAction func reverseSign(_ sender: Any) {
+        converter("-")
+    }
+    
+    
+    func converter(_ num: String){
+        let newString = converter.numAdded(num)
+        InputDisplay.text = newString + " " + converters[currentConverter].inputUnit
+        
+        let outputNum = converter.convertNum(newString, currentConverter)
+        
+        if(outputNum != nil){
+            OutputDisplay.text = String(format: "%.2f", outputNum!) + " " + converters[currentConverter].outputUnit
+        }
+        else {
+            OutputDisplay.text = converters[currentConverter].outputUnit
+        }
     }
     
     func respondToActionSheet(){
